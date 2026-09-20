@@ -8,7 +8,7 @@ import plotly.express as px
 st.set_page_config(page_title="EcoTrek 销售分析", page_icon="📈", layout="wide")
 
 # 2. 添加网页主标题和副标题
-st.title("🌿 EcoTrek Solutions - 销售与温度趋势分析")
+st.title(" EcoTrek Solutions - 销售与温度趋势分析")
 st.markdown("本看板展示了每日销售量与温度之间的关系，帮助制定营销和生产策略。")
 
 # 3. 使用缓存加载数据，避免每次刷新网页都要重新读取，提高性能
