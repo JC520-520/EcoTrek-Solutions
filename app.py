@@ -1,4 +1,3 @@
-
 # 这段代码会生成一个完整的 Streamlit Web 应用
 
 import streamlit as st
@@ -55,3 +54,8 @@ st.plotly_chart(fig_scatter, use_container_width=True)
 
 # 7. 添加页面底部说明
 st.caption("EcoTrek Solutions - 商业数据分析报告")
+# 8. 添加商业洞察与建议
+st.divider()
+st.subheader("商业洞察与建议")
+st.markdown("""通过散点图及趋势线可以看出，温度与销量呈**明显的正相关**(温度越高，销量越大)。
+              因此，建议公司在气温较高的月份（如夏季）**可提前增加产量，并加大营销投放力度**；在温度较低的月份则应**控制库存，避免积压**。""")
