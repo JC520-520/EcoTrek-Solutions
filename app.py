@@ -1,6 +1,6 @@
-# 【代码作用：使用 %%writefile 魔法命令，将当前单元格的代码写入到 app.py 文件中】
+
 # 这段代码会生成一个完整的 Streamlit Web 应用
-%%writefile app.py
+
 import streamlit as st
 import pandas as pd
 import plotly.express as px
