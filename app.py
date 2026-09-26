@@ -95,7 +95,7 @@ with col_pie:
   
 with col_bar:
        # 第4：制作情绪极性数量柱状图
-       fig_bar , ax_bar = plt.aubplots(figsize=((8,5))
+       fig_bar , ax_bar = plt.subplots(figsize=(8,5))
 
        # 使用 Seaborn 画柱状图，指定 ax=ax_bar
     sns.countplot(x='sentiment',
