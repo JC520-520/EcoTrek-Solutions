@@ -31,10 +31,9 @@ df = load_data()
 #加载评论数据
 @st.cache_data
 def load_reviews_data()
-    review_df = pd.read_csv('reviews.csv')
+    reviews_df = pd.read_csv('Chyi_Joelle_sentiment.csv')
                 return reviews_df
 
-    df = load_data()
     reviews_df = load_reviews_data()
 
 # 4. 在网页侧边栏添加交互组件：日期范围选择器
