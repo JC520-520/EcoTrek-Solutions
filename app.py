@@ -93,7 +93,7 @@ with col_pie:
     # 在 Streamlit 中渲染 Matplotlib 图表
     st.pyplot(fig_pie)
   
-  with col_bar：
+with col_bar：
        # 第4：制作情绪极性数量柱状图
        fig_bar , ax_bar = plt.aubplots(figsize=((8,5))
 
