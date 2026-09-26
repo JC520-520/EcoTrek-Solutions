@@ -104,7 +104,7 @@ palette=colcrs)
 
        ax_bar.set_title('顾客评价情绪性数量分布',fontsize=14) 
        ax_bar.set_xlabel('情绪类别',fontsize=12)
-       ax_bar.set_ylabel('数量'fontsize=12)
+       ax_bar.set_ylabel('数量',fontsize=12)
 
        # 在Streamlit 中渲染
        st.pyplot(fig_bar)
