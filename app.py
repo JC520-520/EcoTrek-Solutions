@@ -20,7 +20,7 @@ st.markdown("本看板展示了每日销售量与温度之间的关系，帮助�
 
 # 3. 使用缓存加载数据，避免每次刷新网页都要重新读取，提高性能
 @st.cache_data
-def load_data():
+def load_data):
     df = pd.read_csv('Week_3_Temperature_DailySale.csv')
     # 确保日期格式正确
     df['Date'] = pd.to_datetime(df['Date'])
