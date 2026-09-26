@@ -30,7 +30,7 @@ df = load_data()
 
 #加载评论数据
 @st.cache_data
-def load_reviews_data)：
+def load_reviews_data()：
     reviews_df = pd.read_csv('Chyi_Joelle_sentiment.csv')
                 return reviews_df
 
