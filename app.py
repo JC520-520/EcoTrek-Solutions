@@ -36,7 +36,7 @@ def load_reviews_data():
 
 reviews_df = load_reviews_data()
 
-    reviews_df = load_reviews_data()
+reviews_df = load_reviews_data()
 
 # 4. 在网页侧边栏添加交互组件：日期范围选择器
 st.sidebar.header("筛选条件")
