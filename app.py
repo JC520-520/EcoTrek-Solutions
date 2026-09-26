@@ -77,19 +77,20 @@ st.subheader("顾客评价情绪分析")
 col_pie, col_bar = st.columns(2)
 
 with col_pie:
-     # 第6：制作情绪百分比饼图
-     sentiment_pct = reviews_df['sentiment'].value_counts(normalize=True) * 100
-
-     # 创建 Matplotlib 图形对象 (不使用plt.show())
-     fig_pie, ax_pie = plt.subplots(figsize=(6,5))
-     # 颜色设置：绿 黄 红
-     colors = ['#4CAF50','#FFC107','#F44336']
-
-     ax_pie.pie(sentiment_pct,labels=sentiment_pci.index,autopct='%1.1f%%',startangle=140,colors=colors)
-     ax_pie.set_title('顾客评价情绪百分比分布')
-     ax_pie.axis('equal') # 保证饼图是正圆
-
-     # 在 Streamlit 中渲染 Matplotlib 图表
+    # 第6：制作情绪百分比饼图
+    sentiment_pct = reviews_df['sentiment'].value_counts(normalize=True) * 100
+    
+    # 创建 Matplotlib 图形对象 (不使用 plt.show())
+    fig_pie, ax_pie = plt.subplots(figsize=(6, 5))
+    # 颜色设置：绿、黄、红
+    colors = ['#4CAF50', '#FFC107', '#F44336']
+    
+    ax_pie.pie(sentiment_pct, labels=sentiment_pct.index, autopct='%1.1f%%', 
+               startangle=140, colors=colors)
+    ax_pie.set_title('顾客评价情绪百分比分布')
+    ax_pie.axis('equal') # 保证饼图是正圆
+    
+    # 在 Streamlit 中渲染 Matplotlib 图表
     st.pyplot(fig_pie)
   
   with col_bar：
