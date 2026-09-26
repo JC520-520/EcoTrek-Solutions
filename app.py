@@ -30,8 +30,10 @@ df = load_data()
 
 #加载评论数据
 @st.cache_data
-def load_Chyi_J_4.ipynb
-    df = pd.read_csv('Chyi_J_4.ipynb)
+def load_reviews_data()
+    review_df = pd.read_csv('reviews.csv')
+                return reviews_df
+
     df = load_data()
     reviews_df = load_reviews_data()
 
