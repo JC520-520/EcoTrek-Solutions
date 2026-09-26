@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Matplotlib 中文显示
-Plt.rcParams['font.sans-serif'] = ['SimHei']
+plt.rcParams['font.sans-serif'] = ['SimHei']
 # Windows 请用 SimHei
 plt.rcParams['axes.unicode_minus'] = False # 正常显示负号
 
