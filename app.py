@@ -3,6 +3,13 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Matplotlib 中文显示
+Plt.rcParams['font.sans-serif'] = ['SimHei']
+# Windows 请用 SimHei
+plt.rcParams['axes.unicode_minus'] = False # 正常显示负号
 
 # 1. 设置网页的标题和图标
 st.set_page_config(page_title="EcoTrek 销售分析", page_icon="📈", layout="wide")
@@ -20,6 +27,13 @@ def load_data():
     return df
 
 df = load_data()
+
+#加载评论数据
+@st.cache_data
+def load_Chyi_J_4.ipynb
+    df = pd.read_csv('Chyi_J_4.ipynb)
+    df = load_data()
+    reviews_df = load_reviews_data()
 
 # 4. 在网页侧边栏添加交互组件：日期范围选择器
 st.sidebar.header("筛选条件")
@@ -51,6 +65,48 @@ fig_scatter = px.scatter(filtered_df, x='Daily Temperature (C)', y='Daily Units 
                          title='温度 vs 销量', 
                          labels={'Daily Temperature (C)': '温度 (°C)', 'Daily Units Sold': '销量'})
 st.plotly_chart(fig_scatter, use_container_width=True)
+
+st.divider()
+# ==========================【顾客评价情绪图】==============================================
+st.subheader("顾客评价情绪分析")
+
+# 使用两列布局让图表并排显示
+col_pie, col_bar = st.columns(2)
+
+with col_pie:
+     # 第6：制作情绪百分比饼图
+     sentiment_pct = reviews_df['sentiment'].value_counts(normalize=True) * 100
+
+     # 创建 Matplotlib 图形对象 (不使用plt.show())
+     fig_pie, ax_pie = plt.subplots(figsize=(6,5))
+     # 颜色设置：绿 黄 红
+     colors = ['#4CAF50','#FFC107','#F44336']
+
+     ax_pie.pie(sentiment_pct,labels=sentiment_pci.index,autopct='%1.1f%%',startangle=140,colors=colors)
+     ax_pie.set_title('顾客评价情绪百分比分布')
+     ax_pie.axis('equal') # 保证饼图是正圆
+
+     # 在 Streamlit 中渲染 Matplotlib 图表
+      st.pyplot(fig_pie)
+  
+  with col_bar：
+       # 第4：制作情绪极性数量柱状图
+       fig_bar , ax_bar = plt.aubplots(figsize=((8,5))
+
+       # 使用 Seaborn 画柱状图，指定 ax=ax_bar
+       sns.countplot(x='sentiment',
+                     data=reviews_df,ax=ax_bar,
+                     palette=colcrs)
+
+       ax_bar.set_title('顾客评价情绪性数量分布',fontsize=14) 
+       ax_bar.set_xlabel('情绪类别',fontsize=12)
+       ax_bar.set_ylabel('数量'fontsize=12)
+
+        # 在Streamlit 中渲染
+        st.pyplot(fig_bar)
+
+#
+===================================================================
 
 # 7. 添加页面底部说明
 st.caption("EcoTrek Solutions - 商业数据分析报告")
