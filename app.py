@@ -98,16 +98,16 @@ with col_bar:
        fig_bar , ax_bar = plt.subplots(figsize=(8,5))
 
        # 使用 Seaborn 画柱状图，指定 ax=ax_bar
-    sns.countplot(x='sentiment',
-                     data=reviews_df,ax=ax_bar,
-                     palette=colcrs)
+       sns.countplot(x='sentiment',
+data=reviews_df,ax=ax_bar,
+palette=colcrs)
 
-    ax_bar.set_title('顾客评价情绪性数量分布',fontsize=14) 
-    ax_bar.set_xlabel('情绪类别',fontsize=12)
-    ax_bar.set_ylabel('数量'fontsize=12)
+       ax_bar.set_title('顾客评价情绪性数量分布',fontsize=14) 
+       ax_bar.set_xlabel('情绪类别',fontsize=12)
+       ax_bar.set_ylabel('数量'fontsize=12)
 
-        # 在Streamlit 中渲染
-        st.pyplot(fig_bar)
+       # 在Streamlit 中渲染
+       st.pyplot(fig_bar)
 
 #
 ===================================================================
